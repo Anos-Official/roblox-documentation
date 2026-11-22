@@ -1,0 +1,93 @@
+<!-- Source: https://create.roblox.com/docs/en-us/art/accessories/creating-rigid/publishing -->
+
+Upload and publish | Documentation - Roblox Creator Hub
+
+For Agents | This page is available as markdown: https://create.roblox.com/docs/art/accessories/creating-rigid/publishing.md | Documentation index: https://create.roblox.com/docs/llms.txt
+
+1. [Learn](/docs/en-us)
+2. /
+3. [Tutorials](/docs/en-us/tutorials)
+
+# Upload and publish
+
+English
+
+[Edit](https://github.com/Roblox/creator-docs/blob/main/content/en-us/art/accessories/creating-rigid/publishing.md)
+
+After generating your [Accessory](/docs/en-us/reference/engine/classes/Accessory)  item, you can now begin the process of publishing  the asset to the Marketplace. This step is optional and only applicable for creators who intend to sell their asset. For full information on the publishing process, see [uploading and publishing to the Marketplace](/docs/en-us/marketplace/publish-to-marketplace) .
+
+Users must meet [creator requirements](/docs/en-us/marketplace/marketplace-policy#creator-requirements)  to be eligible to sell assets on the Marketplace. Creators must also provide an upload fee and a payment advance during the upload and publishing process.
+
+Adding your asset to the Marketplace involves 2 steps:
+
+1.
+
+Uploading  - Uploading the asset to Roblox servers for moderation.
+
+2.
+
+Publishing  - Listing the item on sale on the Marketplace.
+
+## [Upload](#upload)[](#upload)
+
+To upload your accessory:
+
+1.
+
+(Recommended)  [Create a custom thumbnail of your accessory](/docs/en-us/marketplace/custom-thumbnails)  to ensure your thumbnail correctly captures the look of your accessory.
+
+You cannot create a custom thumbnail after you upload your rigid accessory.
+
+2.
+
+In the Explorer  window, right-click your accessory object and select Save to Roblox…  from the contextual menu.
+
+3.
+
+In the Asset Configuration  window, set the Content Type  to Avatar Item .
+
+4.
+
+Complete the following fields (you can adjust these later):
+
+-
+
+Title : The name of your accessory.
+
+-
+
+Description : A short description of your asset.
+
+-
+
+Asset Category : The type of accessory. This should match the Accessory Type selected during the [fitting and conversion](/docs/en-us/art/accessories/creating-rigid/converting)  process.
+
+-
+
+Creator : Use the dropdown to select if you'd like to publish this asset as an individual or as part of an associated group.
+
+5.
+
+After you select the Asset Category , Studio begins validating the asset to ensure that it matches Roblox's accessory technical requirements. If the validation is successful, you can submit the asset to the upload and moderation queue for a fee. For more information on fees, see [Marketplace fees and commissions](/docs/en-us/marketplace/marketplace-fees-and-commissions) .
+
+## [Publish](#publish)[](#publish)
+
+After uploading your accessory, the asset is added to the moderation queue and may take up to 24 hours to clear. You can check your accessory's moderation status in the [Creator Hub](https://create.roblox.com/dashboard/creations) .
+
+After moderation is complete, your rigid accessory's publishing details become available to edit and enable for sale. See the following for an overview on the various sale options available:
+
+After listing an asset to the Marketplace, you can return to this page to edit your item's sale details, or take the item offsale.
+
+[Previous](/docs/en-us/art/accessories/creating-rigid/converting)
+
+©2026 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.
+
+[Terms](https://www.roblox.com/info/terms) ·[Privacy](https://www.roblox.com/info/privacy) ·[Accessibility](https://www.roblox.com/info/accessibility) ·[Support](https://www.roblox.com/info/help)
+
+[](https://x.com/Roblox)[](https://www.facebook.com/Roblox/)[](https://www.linkedin.com/company/roblox)[](https://www.instagram.com/roblox/)[](https://www.youtube.com/@RobloxLearn)
+
+[
+
+English
+
+](https://create.roblox.com/settings/preferences)

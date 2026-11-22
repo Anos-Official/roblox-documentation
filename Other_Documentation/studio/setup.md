@@ -1,0 +1,109 @@
+<!-- Source: https://create.roblox.com/docs/studio/setup -->
+
+Roblox Studio setup | Documentation - Roblox Creator Hub
+
+For Agents | This page is available as markdown: https://create.roblox.com/docs/studio/setup.md | Documentation index: https://create.roblox.com/docs/llms.txt
+
+1. [Learn](/docs)
+2. /
+3. [Studio](/docs/en-us/studio)
+
+# Roblox Studio setup
+
+English
+
+[Edit](https://github.com/Roblox/creator-docs/blob/main/content/en-us/studio/setup.md)
+
+Create immersive 3D games on Roblox with Roblox Studio , a free application available on Windows and Mac.
+
+## [System requirements](#system-requirements)[](#system-requirements)
+
+|  | |
+
+MINIMUM
+
+ | |
+
+RECOMMENDED
+
+ |
+| --- | --- |
+| OS Version | | Windows 10
+macOS 10.14 | | Windows 11
+macOS 14+ |
+| Memory (RAM) | | 3 GB | | 8 GB |
+| Resolution | |  | | 1600×900 or higher |
+
+## [Installation](#installation)[](#installation)
+
+1.
+
+.
+
+2.
+
+In the pop-up dialog, click the Download Studio  button.
+
+3.
+
+Find the Studio installer in your browser's download history and double-click the file.
+
+-
+
+On Windows, the file is RobloxStudio.exe .
+
+-
+
+On Mac, the file is RobloxStudio.dmg .
+
+4.
+
+After Studio finishes installing, a pop-up confirmation displays. Click the Launch Studio  button.
+
+5.
+
+Sign in to Studio with your Roblox account (if you don't have an account, create one at [roblox.com](https://www.roblox.com/) ).
+
+## [Customization](#customization)[](#customization)
+
+You can customize Studio to suit your workflow across various levels:
+
+-
+
+[Configure the toolbar](/docs/studio/overview#toolbar-and-mezzanine)  with custom tabs, reorganize tools within custom tabs, hide infrequently used tabs, and more.
+
+-
+
+Customize the [window layout](/docs/studio/overview#layout-customization)  to best suit your workflows.
+
+-
+
+View/edit Studio shortcuts and bind actions without defaults through File  ⟩ Customize Shortcuts .
+
+-
+
+Access a wide array of Studio Settings  (Alt S  on Windows; ⌥ S  on Mac). Locate known settings by typing keywords into the search field at the top of the window, for example theme  to locate the setting for dark theme or light theme.
+
+## [Updates](#updates)[](#updates)
+
+In contrast to certain other engines, every game runs on the latest version of the Roblox engine. You should keep Studio up‑to‑date to utilize the latest APIs and features.
+
+If your current version of Studio is outdated, you'll see an Update  button in the upper‑right corner. Clicking the button will prompt you to save/close the currently open place so that Studio can automatically update and restart.
+
+ ![Update button in Studio highlighted.](https://prod.docsiteassets.roblox.com/assets/studio/general/Toolbar-Update-Available.png)
+
+## [Beta features](#beta-features)[](#beta-features)
+
+Many beta features are available through Studio's File  ⟩ Beta Features  menu. Once you've enabled beta features, click the Save  button and you'll be prompted to restart Studio for the features to take effect.
+
+©2026 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.
+
+[Terms](https://www.roblox.com/info/terms) ·[Privacy](https://www.roblox.com/info/privacy) ·[Accessibility](https://www.roblox.com/info/accessibility) ·[Support](https://www.roblox.com/info/help)
+
+[](https://x.com/Roblox)[](https://www.facebook.com/Roblox/)[](https://www.linkedin.com/company/roblox)[](https://www.instagram.com/roblox/)[](https://www.youtube.com/@RobloxLearn)
+
+[
+
+English
+
+](https://create.roblox.com/settings/preferences)

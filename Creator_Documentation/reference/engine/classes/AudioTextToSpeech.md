@@ -1,0 +1,656 @@
+<!-- Source: https://create.roblox.com/docs/en-us/reference/engine/classes/AudioTextToSpeech -->
+
+AudioTextToSpeech | Documentation - Roblox Creator Hub
+
+For Agents | This page is available as markdown: https://create.roblox.com/docs/reference/engine/classes/AudioTextToSpeech.md | Documentation index: https://create.roblox.com/docs/llms.txt | Engine API index: https://create.roblox.com/docs/reference/engine/llms.txt
+
+Learn
+
+1. [Classes](/docs/en-us/reference/engine/classes)
+2. /
+3. [Object](/docs/en-us/reference/engine/classes/Object)
+4. /
+5. [Instance](/docs/en-us/reference/engine/classes/Instance)
+6. /
+7. [AudioTextToSpeech](/docs/en-us/reference/engine/classes/AudioTextToSpeech)
+
+English
+
+Feedback
+
+Engine Class
+
+AudioTextToSpeech
+
+---
+
+## Summary
+
+Properties
+
+|
+
+[AutoLocalize](#AutoLocalize) :[boolean](/docs/en-us/luau/booleans)
+
+ |
+| --- | --- |
+|
+
+[IsLoaded](#IsLoaded) :[boolean](/docs/en-us/luau/booleans)
+
+ |
+|
+
+[IsPlaying](#IsPlaying) :[boolean](/docs/en-us/luau/booleans)
+
+ |
+|
+
+[Looping](#Looping) :[boolean](/docs/en-us/luau/booleans)
+
+ |
+|
+
+[Pitch](#Pitch) :[number](/docs/en-us/luau/numbers)
+
+ |
+|
+
+[PlaybackSpeed](#PlaybackSpeed) :[number](/docs/en-us/luau/numbers)
+
+ |
+|
+
+[Speed](#Speed) :[number](/docs/en-us/luau/numbers)
+
+ |
+|
+
+[Text](#Text) :[string](/docs/en-us/luau/strings)
+
+ |
+|
+
+[TimeLength](#TimeLength) :[number](/docs/en-us/luau/numbers)
+
+ |
+|
+
+[TimePosition](#TimePosition) :[number](/docs/en-us/luau/numbers)
+
+ |
+|
+
+[VoiceId](#VoiceId) :[string](/docs/en-us/luau/strings)
+
+ |
+|
+
+[Volume](#Volume) :[number](/docs/en-us/luau/numbers)
+
+ |
+
+Methods
+
+|
+
+[GetConnectedWires](#GetConnectedWires) (pin :  [string](/docs/en-us/luau/strings) ) : {[Wire](/docs/en-us/reference/engine/classes/Wire) }
+
+ |
+|
+
+[GetInputPins](#GetInputPins) () :[{any}](/docs/en-us/luau/tables#arrays)
+
+ |
+|
+
+[GetOutputPins](#GetOutputPins) () :[{any}](/docs/en-us/luau/tables#arrays)
+
+ |
+|
+
+[GetWaveformAsync](#GetWaveformAsync) (timeRange :  [NumberRange](/docs/en-us/reference/engine/datatypes/NumberRange) , samples :  [number](/docs/en-us/luau/numbers) ) :[{any}](/docs/en-us/luau/tables#arrays)
+
+ |
+|
+
+[LoadAsync](#LoadAsync) () :[Enum.AssetFetchStatus](/docs/en-us/reference/engine/enums/AssetFetchStatus)
+
+ |
+|
+
+[Pause](#Pause) () : ()
+
+ |
+|
+
+[Play](#Play) () : ()
+
+ |
+|
+
+[Unload](#Unload) () : ()
+
+ |
+
+Events
+
+|
+
+[Ended](#Ended) () :[RBXScriptSignal](/docs/en-us/reference/engine/datatypes/RBXScriptSignal)
+
+ |
+|
+
+[Looped](#Looped) () :[RBXScriptSignal](/docs/en-us/reference/engine/datatypes/RBXScriptSignal)
+
+ |
+|
+
+[WiringChanged](#WiringChanged) (connected :  [boolean](/docs/en-us/luau/booleans) , pin :  [string](/docs/en-us/luau/strings) , wire :  [Wire](/docs/en-us/reference/engine/classes/Wire) , instance :  [Instance](/docs/en-us/reference/engine/datatypes/Instance) ) :[RBXScriptSignal](/docs/en-us/reference/engine/datatypes/RBXScriptSignal)
+
+ |
+
+Inherited Members
+
+58  inherited from [Instance](/docs/en-us/reference/engine/classes/Instance)
+
+6  inherited from [Object](/docs/en-us/reference/engine/classes/Object)
+
+Code Samples
+
+Outputting Text as Speech
+
+```
+
+local audioTextToSpeech: AudioTextToSpeech = Instance.new("AudioTextToSpeech")
+
+audioTextToSpeech.Parent = workspace
+
+audioTextToSpeech.Text = "Hello! Converting text into speech is fun!"
+
+audioTextToSpeech.VoiceId = "1"
+
+local deviceOutput = Instance.new("AudioDeviceOutput")
+
+deviceOutput.Parent = workspace
+
+local wire = Instance.new("Wire")
+
+wire.Parent = workspace
+
+wire.SourceInstance = audioTextToSpeech
+
+wire.TargetInstance = deviceOutput
+
+local count = 0
+
+local connection = nil
+
+connection = audioTextToSpeech.Ended:Connect(function()
+
+	audioTextToSpeech.Text = "I can count to " .. count .. " because I am very smart"
+
+	audioTextToSpeech.VoiceId = "2"
+
+	audioTextToSpeech.TimePosition = 0
+
+	audioTextToSpeech:Play()
+
+	count += 1
+
+	if count > 10 then
+
+		connection:Disconnect()
+
+	end
+
+end)
+
+audioTextToSpeech:Play()
+
+```
+
+---
+
+API Reference
+
+Properties
+
+AutoLocalize
+
+Read Parallel
+
+Capabilities: Audio
+
+AudioTextToSpeech.AutoLocalize :[boolean](/docs/en-us/luau/booleans)
+
+Provide feedback
+
+---
+
+IsLoaded
+
+Read Only
+
+Not Replicated
+
+Read Parallel
+
+Capabilities: Audio
+
+AudioTextToSpeech.IsLoaded :[boolean](/docs/en-us/luau/booleans)
+
+Provide feedback
+
+---
+
+IsPlaying
+
+Roblox Security
+
+Read Parallel
+
+Capabilities: Audio
+
+AudioTextToSpeech.IsPlaying :[boolean](/docs/en-us/luau/booleans)
+
+Provide feedback
+
+---
+
+Looping
+
+Read Parallel
+
+Capabilities: Audio
+
+AudioTextToSpeech.Looping :[boolean](/docs/en-us/luau/booleans)
+
+Provide feedback
+
+---
+
+Pitch
+
+Read Parallel
+
+Capabilities: Audio
+
+AudioTextToSpeech.Pitch :[number](/docs/en-us/luau/numbers)
+
+Provide feedback
+
+---
+
+PlaybackSpeed
+
+Read Parallel
+
+Capabilities: Audio
+
+AudioTextToSpeech.PlaybackSpeed :[number](/docs/en-us/luau/numbers)
+
+Provide feedback
+
+---
+
+Speed
+
+Read Parallel
+
+Capabilities: Audio
+
+AudioTextToSpeech.Speed :[number](/docs/en-us/luau/numbers)
+
+Provide feedback
+
+---
+
+Text
+
+Read Parallel
+
+Capabilities: Audio
+
+AudioTextToSpeech.Text :[string](/docs/en-us/luau/strings)
+
+Provide feedback
+
+---
+
+TimeLength
+
+Read Only
+
+Not Replicated
+
+Read Parallel
+
+Capabilities: Audio
+
+AudioTextToSpeech.TimeLength :[number](/docs/en-us/luau/numbers)
+
+Provide feedback
+
+---
+
+TimePosition
+
+Read Parallel
+
+Capabilities: Audio
+
+AudioTextToSpeech.TimePosition :[number](/docs/en-us/luau/numbers)
+
+Provide feedback
+
+---
+
+VoiceId
+
+Read Parallel
+
+Capabilities: Audio
+
+AudioTextToSpeech.VoiceId :[string](/docs/en-us/luau/strings)
+
+Provide feedback
+
+---
+
+Volume
+
+Read Parallel
+
+Capabilities: Audio
+
+AudioTextToSpeech.Volume :[number](/docs/en-us/luau/numbers)
+
+Provide feedback
+
+---
+
+Methods
+
+GetConnectedWires
+
+Capabilities: Audio
+
+AudioTextToSpeech:GetConnectedWires (pin :[string](/docs/en-us/luau/strings) ) : {[Wire](/docs/en-us/reference/engine/classes/Wire) }
+
+Parameters
+
+|
+
+pin :[string](/docs/en-us/luau/strings)
+
+ |
+
+Returns
+
+{[Wire](/docs/en-us/reference/engine/classes/Wire) }
+
+Provide feedback
+
+---
+
+GetInputPins
+
+Capabilities: Audio
+
+AudioTextToSpeech:GetInputPins () :[{any}](/docs/en-us/luau/tables#arrays)
+
+Returns
+
+[{any}](/docs/en-us/luau/tables#arrays)
+
+Provide feedback
+
+---
+
+GetOutputPins
+
+Capabilities: Audio
+
+AudioTextToSpeech:GetOutputPins () :[{any}](/docs/en-us/luau/tables#arrays)
+
+Returns
+
+[{any}](/docs/en-us/luau/tables#arrays)
+
+Provide feedback
+
+---
+
+GetWaveformAsync
+
+Yields
+
+Capabilities: Audio
+
+AudioTextToSpeech:GetWaveformAsync (
+
+timeRange :[NumberRange](/docs/en-us/reference/engine/datatypes/NumberRange) , samples :[number](/docs/en-us/luau/numbers)
+
+) :[{any}](/docs/en-us/luau/tables#arrays)
+
+Parameters
+
+|
+
+timeRange :[NumberRange](/docs/en-us/reference/engine/datatypes/NumberRange)
+
+ |
+|
+
+samples :[number](/docs/en-us/luau/numbers)
+
+ |
+
+Returns
+
+[{any}](/docs/en-us/luau/tables#arrays)
+
+Provide feedback
+
+---
+
+LoadAsync
+
+Yields
+
+Capabilities: Audio
+
+AudioTextToSpeech:LoadAsync () :[Enum.AssetFetchStatus](/docs/en-us/reference/engine/enums/AssetFetchStatus)
+
+Returns
+
+[Enum.AssetFetchStatus](/docs/en-us/reference/engine/enums/AssetFetchStatus)
+
+Provide feedback
+
+---
+
+Pause
+
+Capabilities: Audio
+
+AudioTextToSpeech:Pause () : ()
+
+Returns
+
+()
+
+Provide feedback
+
+---
+
+Play
+
+Capabilities: Audio
+
+AudioTextToSpeech:Play () : ()
+
+Returns
+
+()
+
+Provide feedback
+
+---
+
+Unload
+
+Capabilities: Audio
+
+AudioTextToSpeech:Unload () : ()
+
+Returns
+
+()
+
+Provide feedback
+
+---
+
+Events
+
+Ended
+
+Capabilities: Audio
+
+AudioTextToSpeech.Ended () :[RBXScriptSignal](/docs/en-us/reference/engine/datatypes/RBXScriptSignal)
+
+Provide feedback
+
+---
+
+Looped
+
+Capabilities: Audio
+
+AudioTextToSpeech.Looped () :[RBXScriptSignal](/docs/en-us/reference/engine/datatypes/RBXScriptSignal)
+
+Provide feedback
+
+---
+
+WiringChanged
+
+Capabilities: Audio
+
+AudioTextToSpeech.WiringChanged (
+
+connected :[boolean](/docs/en-us/luau/booleans) , pin :[string](/docs/en-us/luau/strings) , wire :[Wire](/docs/en-us/reference/engine/classes/Wire) , instance :[Instance](/docs/en-us/reference/engine/datatypes/Instance)
+
+) :[RBXScriptSignal](/docs/en-us/reference/engine/datatypes/RBXScriptSignal)
+
+Parameters
+
+|
+
+connected :[boolean](/docs/en-us/luau/booleans)
+
+ |
+|
+
+pin :[string](/docs/en-us/luau/strings)
+
+ |
+|
+
+wire :[Wire](/docs/en-us/reference/engine/classes/Wire)
+
+ |
+|
+
+instance :[Instance](/docs/en-us/reference/engine/datatypes/Instance)
+
+ |
+
+Provide feedback
+
+---
+
+Jump to
+
+▼
+
+AudioTextToSpeech
+
+[Summary](#summary)
+
+[Properties](#summary-properties)
+
+[Methods](#summary-methods)
+
+[Events](#summary-events)
+
+[Properties](#properties)
+
+[AutoLocalize](#AutoLocalize)
+
+[IsLoaded](#IsLoaded)
+
+[IsPlaying](#IsPlaying)
+
+[Looping](#Looping)
+
+[Pitch](#Pitch)
+
+[PlaybackSpeed](#PlaybackSpeed)
+
+[Speed](#Speed)
+
+[Text](#Text)
+
+[TimeLength](#TimeLength)
+
+[TimePosition](#TimePosition)
+
+[VoiceId](#VoiceId)
+
+[Volume](#Volume)
+
+[Methods](#methods)
+
+[GetConnectedWires()](#GetConnectedWires)
+
+[GetInputPins()](#GetInputPins)
+
+[GetOutputPins()](#GetOutputPins)
+
+[GetWaveformAsync()](#GetWaveformAsync)
+
+[LoadAsync()](#LoadAsync)
+
+[Pause()](#Pause)
+
+[Play()](#Play)
+
+[Unload()](#Unload)
+
+[Events](#events)
+
+[Ended](#Ended)
+
+[Looped](#Looped)
+
+[WiringChanged](#WiringChanged)
+
+English
+
+Feedback
+
+©2026 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.
+
+[Terms](https://www.roblox.com/info/terms) ·[Privacy](https://www.roblox.com/info/privacy) ·[Accessibility](https://www.roblox.com/info/accessibility) ·[Support](https://www.roblox.com/info/help)
+
+[](https://x.com/Roblox)[](https://www.facebook.com/Roblox/)[](https://www.linkedin.com/company/roblox)[](https://www.instagram.com/roblox/)[](https://www.youtube.com/@RobloxLearn)
+
+[
+
+English
+
+](https://create.roblox.com/settings/preferences)

@@ -1,0 +1,124 @@
+<!-- Source: https://create.roblox.com/docs/reference/engine/classes/PluginMouse -->
+
+PluginMouse | Documentation - Roblox Creator Hub
+
+For Agents | This page is available as markdown: https://create.roblox.com/docs/reference/engine/classes/PluginMouse.md | Documentation index: https://create.roblox.com/docs/llms.txt | Engine API index: https://create.roblox.com/docs/reference/engine/llms.txt
+
+Learn
+
+1. [Classes](/docs/reference/engine/classes)
+2. /
+3. [Object](/docs/reference/engine/classes/Object)
+4. /
+5. [Instance](/docs/reference/engine/classes/Instance)
+6. /
+7. [Mouse](/docs/reference/engine/classes/Mouse)
+8. /
+9. [PluginMouse](/docs/reference/engine/classes/PluginMouse)
+
+English
+
+Feedback
+
+Engine Class
+
+PluginMouse
+
+Not Creatable
+
+---
+
+## Summary
+
+Events
+
+|
+
+[DragEnter](#DragEnter) (instances :  Instances ) :[RBXScriptSignal](/docs/reference/engine/datatypes/RBXScriptSignal)
+
+ |
+| --- | --- |
+
+Inherited Members
+
+25  inherited from [Mouse](/docs/reference/engine/classes/Mouse)
+
+58  inherited from [Instance](/docs/reference/engine/classes/Instance)
+
+6  inherited from [Object](/docs/reference/engine/classes/Object)
+
+Code Samples
+
+PluginMouse Get
+
+```
+
+plugin:Activate(false) -- gain non exclusive access to the mouse
+
+local mouse = plugin:GetMouse()
+
+local function button1Down()
+
+	print("Left mouse click")
+
+end
+
+mouse.Button1Down:Connect(button1Down)
+
+```
+
+---
+
+API Reference
+
+Events
+
+DragEnter
+
+Plugin Security
+
+Capabilities: Input
+
+PluginMouse.DragEnter (instances : Instances ) :[RBXScriptSignal](/docs/reference/engine/datatypes/RBXScriptSignal)
+
+Parameters
+
+|
+
+instances : Instances
+
+ |
+
+Provide feedback
+
+---
+
+Jump to
+
+▼
+
+PluginMouse
+
+[Summary](#summary)
+
+[Events](#summary-events)
+
+[Events](#events)
+
+[DragEnter](#DragEnter)
+
+English
+
+Feedback
+
+©2026 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.
+
+[Terms](https://www.roblox.com/info/terms) ·[Privacy](https://www.roblox.com/info/privacy) ·[Accessibility](https://www.roblox.com/info/accessibility) ·[Support](https://www.roblox.com/info/help)
+
+[](https://x.com/Roblox)[](https://www.facebook.com/Roblox/)[](https://www.linkedin.com/company/roblox)[](https://www.instagram.com/roblox/)[](https://www.youtube.com/@RobloxLearn)
+
+[
+
+English
+
+](https://create.roblox.com/settings/preferences)

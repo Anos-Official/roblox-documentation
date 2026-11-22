@@ -1,0 +1,147 @@
+<!-- Source: https://create.roblox.com/docs/mt-mt/projects/group-guidelines -->
+
+Linji tal-gruppi | Documentation - Roblox Creator Hub
+
+For Agents | Documentation index: https://create.roblox.com/docs/llms.txt
+
+1. [Learn](/docs/en-us)
+2. /
+3. [Platform](/docs/en-us/get-started)
+4. /
+5. Guidelines and policies
+
+# Linji tal-gruppi
+
+English
+
+* This content is translated using AI (Beta) and may contain errors. To view this page in English, click [here] .
+
+If you are the owner of one or more [groups](/docs/en-us/projects/groups) , carefully read through the following expectations for managing your groups.
+
+## [Regoli ta' Roblox](#regoli-ta-roblox)[](#regoli-ta-roblox)
+
+Roblox groups and all content uploaded to them  must follow Roblox's [Community Standards](https://en.help.roblox.com/hc/en-us/articles/203313410-Roblox-Community-Standards)  and [Terms of Use](https://en.help.roblox.com/hc/en-us/articles/115004647846-Roblox-Terms-of-Use) . Content uploaded to groups that is subject to the Community Standards includes, but is not limited to:
+
+-
+
+Assets
+
+-
+
+Avatars
+
+-
+
+Games
+
+## [Responsabbiltà tal-proprjetarji](#responsabbiltà-tal-proprjetarji)[](#responsabbiltà-tal-proprjetarji)
+
+Group owners play a crucial role in maintaining a safe and positive environment within their groups.
+
+-
+
+Group owners should make a reasonable effort to address and mitigate harmful behavior within their communities and groups.
+
+-
+
+Group owners are responsible for utilizing Roblox-provided moderation tools such as [group audit logs](/docs/en-us/projects/groups#log%C4%A7ob-ta-audit-tal-grupp)  to proactively ensure a healthy environment and moderate potentially violative content.
+
+## [Violazzjonijiet u konsegwenzi](#violazzjonijiet-u-konsegwenzi)[](#violazzjonijiet-u-konsegwenzi)
+
+Groups that violate Roblox's [Community Standards](https://en.help.roblox.com/hc/en-us/articles/203313410-Roblox-Community-Standards)  may face enforcement actions such as warnings, restrictions on features, temporary locks, and — for repeat or severe violations — permanent removal. Group owners can [appeal](https://en.help.roblox.com/hc/en-us/articles/360000245263-Appeal-Your-Content-or-Account-Moderation)  any enforcement actions if they believe they were incorrect.
+
+-
+
+Violazzjonijiet tal-Membri  — While group owners are not directly  penalized for member violations, repeated failure to address violations within a group can result in future restrictions on group ownership. An owner whose group is permanently removed will not be able to own a new group for 90 days. Multiple permanent removals will result in a complete loss of group ownership privileges for the owner.
+
+-
+
+Violazzjonijiet tal-Proprjetarji  — Group owners who are found to be using their group to promote or facilitate violations of Roblox's Community Standards (through uploading or encouraging the upload of violative content) will face enforcement actions on their own accounts and possibly the permanent deletion of their group.
+
+## [Lokalizzazzjonijiet addizzjonali għal din il-paġna](#lokalizzazzjonijiet-addizzjonali-għal-din-il-paġna)[](#lokalizzazzjonijiet-addizzjonali-għal-din-il-paġna)
+
+For additional, localized versions of this page that aren't available in the site's language picker, see the following links:
+
+-
+
+[Bulgarian (български)](https://create.roblox.com/docs/bg-bg/projects/group-guidelines)
+
+-
+
+[Croatian (hrvatski)](https://create.roblox.com/docs/hr-hr/projects/group-guidelines)
+
+-
+
+[Czech (čeština)](https://create.roblox.com/docs/cs-cz/projects/group-guidelines)
+
+-
+
+[Danish (dansk)](https://create.roblox.com/docs/da-dk/projects/group-guidelines)
+
+-
+
+[Dutch (Nederlands)](https://create.roblox.com/docs/nl-nl/projects/group-guidelines)
+
+-
+
+[Estonian (eesti)](https://create.roblox.com/docs/et-ee/projects/group-guidelines)
+
+-
+
+[Finnish (suomi)](https://create.roblox.com/docs/fi-fi/projects/group-guidelines)
+
+-
+
+[Greek (Ελληνικά)](https://create.roblox.com/docs/el-gr/projects/group-guidelines)
+
+-
+
+[Hungarian (magyar)](https://create.roblox.com/docs/hu-hu/projects/group-guidelines)
+
+-
+
+[Irish (Gaeilge)](https://create.roblox.com/docs/ga-ie/projects/group-guidelines)
+
+-
+
+[Latvian (latviešu)](https://create.roblox.com/docs/lv-lv/projects/group-guidelines)
+
+-
+
+[Lithuanian (lietuvių)](https://create.roblox.com/docs/lt-lt/projects/group-guidelines)
+
+-
+
+[Maltese (Malti)](https://create.roblox.com/docs/mt-mt/projects/group-guidelines)
+
+-
+
+[Portuguese - Portugal (português)](https://create.roblox.com/docs/pt-pt/projects/group-guidelines)
+
+-
+
+[Romanian (română)](https://create.roblox.com/docs/ro-ro/projects/group-guidelines)
+
+-
+
+[Slovak (slovenčina)](https://create.roblox.com/docs/sk-sk/projects/group-guidelines)
+
+-
+
+[Slovenian (slovenščina)](https://create.roblox.com/docs/sl-si/projects/group-guidelines)
+
+-
+
+[Swedish (svenska)](https://create.roblox.com/docs/sv-se/projects/group-guidelines)
+
+©2026 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.
+
+[Terms](https://www.roblox.com/info/terms) ·[Privacy](https://www.roblox.com/info/privacy) ·[Accessibility](https://www.roblox.com/info/accessibility) ·[Support](https://www.roblox.com/info/help)
+
+[](https://x.com/Roblox)[](https://www.facebook.com/Roblox/)[](https://www.linkedin.com/company/roblox)[](https://www.instagram.com/roblox/)[](https://www.youtube.com/@RobloxLearn)
+
+[
+
+English
+
+](https://create.roblox.com/settings/preferences)

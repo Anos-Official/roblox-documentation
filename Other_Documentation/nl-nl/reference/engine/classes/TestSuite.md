@@ -1,0 +1,184 @@
+<!-- Source: https://create.roblox.com/docs/nl-nl/reference/engine/classes/TestSuite -->
+
+TestSuite | Documentatie - Roblox Creator Hub
+
+For Agents | Documentation index: https://create.roblox.com/docs/llms.txt | Engine API index: https://create.roblox.com/docs/reference/engine/llms.txt
+
+Meer informatie
+
+1. [Klassen](/docs/nl-nl/reference/engine/classes)
+2. /
+3. [Object](/docs/nl-nl/reference/engine/classes/Object)
+4. /
+5. [TestSuite](/docs/nl-nl/reference/engine/classes/TestSuite)
+
+Nederlands
+
+Feedback
+
+Engine-klasse
+
+TestSuite
+
+Niet maakbaar
+
+Niet gerepliceerd
+
+* Deze inhoud is vertaald met behulp van AI (bèta) en kan fouten bevatten. Klik [hier](/docs/en-us/reference/engine/classes/TestSuite)  om deze pagina in het Engels te bekijken.
+
+---
+
+## Samenvatting
+
+Eigenschappen
+
+|
+
+[SuiteName](#SuiteName) :[string](/docs/nl-nl/luau/strings)
+
+ |
+| --- | --- |
+|
+
+[TimeoutSec](#TimeoutSec) :[number](/docs/nl-nl/luau/numbers)
+
+ |
+
+Methoden
+
+|
+
+[GetTestTags](#GetTestTags) () :[{any}](/docs/nl-nl/luau/tables#arrays)
+
+ |
+|
+
+[RegisterTest](#RegisterTest) (testName :  [string](/docs/nl-nl/luau/strings) , callback :  [function](/docs/nl-nl/luau/functions) , options :  [Dictionary](/docs/nl-nl/luau/tables#dictionaries) ) :[TestCase](/docs/nl-nl/reference/engine/classes/TestCase)
+
+ |
+
+Overgenomen leden
+
+6  overgenomen van [Object](/docs/nl-nl/reference/engine/classes/Object)
+
+---
+
+API-referentie
+
+Eigenschappen
+
+SuiteName
+
+Alleen-lezen
+
+Niet gerepliceerd
+
+Parallel lezen
+
+TestSuite.SuiteName :[string](/docs/nl-nl/luau/strings)
+
+Feedback geven
+
+---
+
+TimeoutSec
+
+Alleen-lezen
+
+Niet gerepliceerd
+
+Parallel lezen
+
+TestSuite.TimeoutSec :[number](/docs/nl-nl/luau/numbers)
+
+Feedback geven
+
+---
+
+Methoden
+
+GetTestTags
+
+TestSuite:GetTestTags () :[{any}](/docs/nl-nl/luau/tables#arrays)
+
+Teruggaves
+
+[{any}](/docs/nl-nl/luau/tables#arrays)
+
+Feedback geven
+
+---
+
+RegisterTest
+
+TestSuite:RegisterTest (
+
+testName :[string](/docs/nl-nl/luau/strings) , callback :[function](/docs/nl-nl/luau/functions) , options :[Dictionary](/docs/nl-nl/luau/tables#dictionaries)
+
+) :[TestCase](/docs/nl-nl/reference/engine/classes/TestCase)
+
+Parameters
+
+|
+
+testName :[string](/docs/nl-nl/luau/strings)
+
+ |
+|
+
+callback :[function](/docs/nl-nl/luau/functions)
+
+ |
+|
+
+options :[Dictionary](/docs/nl-nl/luau/tables#dictionaries)
+
+Standaardwaarde: nil |
+
+Teruggaves
+
+[TestCase](/docs/nl-nl/reference/engine/classes/TestCase)
+
+Feedback geven
+
+---
+
+Ga naar
+
+▼
+
+TestSuite
+
+[Samenvatting](#summary)
+
+[Eigenschappen](#summary-properties)
+
+[Methoden](#summary-methods)
+
+[Eigenschappen](#properties)
+
+[SuiteName](#SuiteName)
+
+[TimeoutSec](#TimeoutSec)
+
+[Methoden](#methods)
+
+[GetTestTags()](#GetTestTags)
+
+[RegisterTest()](#RegisterTest)
+
+Nederlands
+
+Feedback
+
+©2026 Roblox Corporation. Roblox, het Roblox-logo en Powering Imagination behoren tot onze geregistreerde en niet-geregistreerde handelsmerken in de VS en andere landen.
+
+[Voorwaarden](https://www.roblox.com/info/terms) ·[Privacy](https://www.roblox.com/info/privacy) ·[Toegankelijkheid](https://www.roblox.com/info/accessibility) ·[Ondersteuning](https://www.roblox.com/info/help)
+
+[](https://x.com/Roblox)[](https://www.facebook.com/Roblox/)[](https://www.linkedin.com/company/roblox)[](https://www.instagram.com/roblox/)[](https://www.youtube.com/@RobloxLearn)
+
+[
+
+Nederlands
+
+](https://create.roblox.com/settings/preferences)

@@ -1,0 +1,87 @@
+<!-- Source: https://create.roblox.com/docs/nl-nl/reference/engine/classes/CylinderMesh -->
+
+CylinderMesh | Documentatie - Roblox Creator Hub
+
+For Agents | Documentation index: https://create.roblox.com/docs/llms.txt | Engine API index: https://create.roblox.com/docs/reference/engine/llms.txt
+
+Meer informatie
+
+1. [Klassen](/docs/nl-nl/reference/engine/classes)
+2. /
+3. [Object](/docs/nl-nl/reference/engine/classes/Object)
+4. /
+5. [Instance](/docs/nl-nl/reference/engine/classes/Instance)
+6. /
+7. [DataModelMesh](/docs/nl-nl/reference/engine/classes/DataModelMesh)
+8. /
+9. [BevelMesh](/docs/nl-nl/reference/engine/classes/BevelMesh)
+10. /
+11. [CylinderMesh](/docs/nl-nl/reference/engine/classes/CylinderMesh)
+
+Nederlands
+
+Feedback
+
+Engine-klasse
+
+CylinderMesh
+
+Verouderd
+
+* Deze inhoud is vertaald met behulp van AI (bèta) en kan fouten bevatten. Klik [hier](/docs/en-us/reference/engine/classes/CylinderMesh)  om deze pagina in het Engels te bekijken.
+
+---
+
+## Samenvatting
+
+Overgenomen leden
+
+3  overgenomen van [DataModelMesh](/docs/nl-nl/reference/engine/classes/DataModelMesh)
+
+58  overgenomen van [Instance](/docs/nl-nl/reference/engine/classes/Instance)
+
+6  overgenomen van [Object](/docs/nl-nl/reference/engine/classes/Object)
+
+Codevoorbeelden
+
+CilinderMesh Instantie
+
+```
+
+local part = Instance.new("Part")
+
+part.Position = Vector3.new(0, 2, 0)
+
+part.Size = Vector3.new(10, 2, 5)
+
+part.Anchored = true
+
+local mesh = Instance.new("CylinderMesh")
+
+mesh.Parent = part
+
+mesh.Scale = Vector3.new(1, 1, 1)
+
+mesh.Offset = Vector3.new(0, 0, 0)
+
+local adornment = Instance.new("SelectionBox")
+
+adornment.Adornee = part
+
+adornment.Parent = part
+
+part.Parent = workspace
+
+```
+
+©2026 Roblox Corporation. Roblox, het Roblox-logo en Powering Imagination behoren tot onze geregistreerde en niet-geregistreerde handelsmerken in de VS en andere landen.
+
+[Voorwaarden](https://www.roblox.com/info/terms) ·[Privacy](https://www.roblox.com/info/privacy) ·[Toegankelijkheid](https://www.roblox.com/info/accessibility) ·[Ondersteuning](https://www.roblox.com/info/help)
+
+[](https://x.com/Roblox)[](https://www.facebook.com/Roblox/)[](https://www.linkedin.com/company/roblox)[](https://www.instagram.com/roblox/)[](https://www.youtube.com/@RobloxLearn)
+
+[
+
+Nederlands
+
+](https://create.roblox.com/settings/preferences)

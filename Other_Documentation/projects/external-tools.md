@@ -1,0 +1,225 @@
+<!-- Source: https://create.roblox.com/docs/projects/external-tools -->
+
+Third-party tools | Documentation - Roblox Creator Hub
+
+For Agents | This page is available as markdown: https://create.roblox.com/docs/projects/external-tools.md | Documentation index: https://create.roblox.com/docs/llms.txt
+
+1. [Learn](/docs)
+2. /
+3. [Experiences](/docs/en-us/experiences)
+4. /
+5. [Projects](/docs/projects)
+6. /
+7. [File-based workflows](/docs/projects/file-based-workflows)
+
+# Third-party tools
+
+English
+
+[Edit](https://github.com/Roblox/creator-docs/blob/main/content/en-us/projects/external-tools.md)
+
+For professional development studios, setting up third-party tools and investing in automation can dramatically improve developer productivity. Roblox's cloud-first approach has many advantages, but moving certain portions of the development workflow outside  of the cloud can help larger teams track changes over time, review code, and use the languages and tools with which they're already familiar.
+
+-
+
+If you just want to use an external text editor or keep code in version control, [Script Sync](/docs/scripting/sync)  is a great choice.
+
+-
+
+If you want to manage your entire project as a set of local files, this page covers some tools and strategies.
+
+-
+
+To compare full team workflows and their tradeoffs, see [Compare file-based workflows](/docs/projects/file-based-workflows) .
+
+Although this page covers several popular tools, it shouldn't be taken as a strict recommendation of them. Every team has different needs, so this page is intended to help you examine ways to improve your workflow rather than tell you to download anything in particular.
+
+The tools on this page are not maintained by Roblox and can change or stop working at any time.
+
+## [The syncing problem](#the-syncing-problem)[](#the-syncing-problem)
+
+At its core, using external tools with Roblox is a * syncing*  problem:
+
+-
+
+You want your Roblox instances to exist as files on disk so that you can use your own tools to work on them.
+
+-
+
+You have to get your files back into your Roblox project after you've finished working on them.
+
+-
+
+If someone else changed those same files in the meantime, you have to handle any conflicts.
+
+For the whole solution to feel seamless and automatic, you need to a) listen for changes to files and b) incorporate these changes back into Studio.
+
+Rather than Roblox's cloud-first approach, [Rojo](https://rojo.space/)  allows for a "file system-first" approach. It runs a server on your machine that communicates with a [Studio plugin](/docs/studio/plugins)  to synchronize your files and the Studio data model.
+
+## [Rojo](#rojo)[](#rojo)
+
+Rojo is the most common tool for syncing files with Studio. To install and run it, and to choose between partially and fully managed projects, see [Rojo](/docs/projects/rojo) .
+
+## [Rokit](#rokit)[](#rokit)
+
+Different team members using different versions of the same tool causes hard-to-diagnose problems. A toolchain manager like [Rokit](https://github.com/rojo-rbx/rokit)  solves this with a rokit.toml  file that lists each tool and its version, so that rokit install  sets up the same versions on every machine. Because it manages your baseline development environment rather than the packages within your project, Rokit is more akin to [nvm](https://github.com/nvm-sh/nvm)  than [npm](https://www.npmjs.com/) . For an example rokit.toml , see [Install Rojo](/docs/projects/rojo#install-rojo) .
+
+## [Package managers](#package-managers)[](#package-managers)
+
+Roblox has a robust set of included APIs, but if you want to make use of community software packages in a consistent, reproducible way, you need a package manager. [Wally](https://wally.run/)  is a popular option. You can install it through Rokit, just like Rojo.
+
+Within your game's Rojo directory, run wally init . Then add your desired packages to wally.toml . The file might look like this:
+
+```
+
+[package]
+
+name = "my-home-directory/my-new-experience"
+
+version = "0.1.0"
+
+registry = "https://github.com/UpliftGames/wally-index"
+
+realm = "shared"
+
+[dependencies]
+
+react = "jsdotlua/react@17.2.1"
+
+react-roblox = "jsdotlua/react-roblox@17.2.1"
+
+cryo = "phalanxia/cryo@1.0.3"
+
+```
+
+Then run wally install . Wally creates a Packages  directory and downloads the specified packages there. The final step is to add the Packages  directory to Rojo so that its contents sync back to Roblox. Open default.project.json  and add the path. For simplicity, this example adds the entire directory to [ReplicatedStorage](/docs/reference/engine/classes/ReplicatedStorage)  so that all packages are available to all scripts, but you might prefer to add specific packages to [ServerScriptService](/docs/reference/engine/classes/ServerScriptService)  or [StarterPlayerScripts](/docs/reference/engine/classes/StarterPlayerScripts) :
+
+```
+
+{
+
+  "name": "my-new-experience",
+
+  "tree": {
+
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+
+      "Shared": {
+
+        "$path": "src/shared"
+
+      },
+
+      "Packages": {
+
+        "$path": "Packages"
+
+      }
+
+    },
+
+    ...
+
+  }
+
+}
+
+```
+
+Then you can require packages within your scripts just like any other [ModuleScript](/docs/reference/engine/classes/ModuleScript) :
+
+```
+
+local Players = game:GetService("Players")
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local React = require(ReplicatedStorage.Packages.react)
+
+local ReactRoblox = require(ReplicatedStorage.Packages["react-roblox"])
+
+local handle = Instance.new("ScreenGui", Players.LocalPlayer.PlayerGui)
+
+local root = ReactRoblox.createRoot(handle)
+
+local helloFrame = React.createElement("TextLabel", {
+
+	Text = "Hello World!",
+
+	Size = UDim2.new(0, 200, 0, 200),
+
+	Position = UDim2.new(0.5, 0, 0.5, 0),
+
+	AnchorPoint = Vector2.new(0.5, 0.5),
+
+	BackgroundColor3 = Color3.fromRGB(248, 217, 109),
+
+	Font = Enum.Font.LuckiestGuy,
+
+	TextSize = 24
+
+})
+
+root:render(helloFrame)
+
+```
+
+Like most other software projects, the goal is that contributors can clone a repository, install Rokit, run a few commands, and have the same development environment as the rest of the team.
+
+For a detailed walkthrough of using React to create a Roblox UI, see [React + Roblox](https://devforum.roblox.com/t/how-to-react-roblox/2964543) .
+
+## [Version control](#version-control)[](#version-control)
+
+Having a set of plain text files on your computer unlocks a variety of capabilities, but the primary one is * version control* . You can store your files in a [Git](https://git-scm.com/)  or [Mercurial](https://www.mercurial-scm.org/)  repository; host remote repositories and review code changes in [GitHub](https://github.com) , [GitLab](https://gitlab.com) , or [Bitbucket](https://bitbucket.org) ; and use whichever text editor you like.
+
+[Visual Studio Code](https://code.visualstudio.com)  and [Cursor](https://cursor.com)  have the largest extension ecosystem, but [Sublime Text](https://www.sublimetext.com)  and [Notepad++](https://notepad-plus-plus.org) , and [Vim](https://www.vim.org)  are all popular choices. Whichever editor you choose, matching the capabilities of the Studio script editor will require some extensions.
+
+You might also consider adding:
+
+-
+
+A linter like [selene](https://github.com/Kampfkarren/selene)  to catch common issues and enforce coding standards
+
+-
+
+A code formatter like [StyLua](https://github.com/JohnnyMorganz/StyLua)
+
+-
+
+A language server like [Luau Language Server](https://github.com/JohnnyMorganz/luau-lsp)  for autocompletion, type checking, and more
+
+-
+
+[Open Cloud](/docs/cloud/guides)  scripts (not synced to Studio) to [update a published game](/docs/cloud/reference/Universe#Cloud_UpdateUniverse)  or [restart servers](/docs/cloud/reference/Universe#Cloud_RestartUniverseServers)
+
+## [Build, asset, and merge tools](#build-asset-and-merge-tools)[](#build-asset-and-merge-tools)
+
+-
+
+[Lune](https://github.com/lune-org/lune)  is a standalone Luau runtime that many teams use for build, deploy, and automation scripts.
+
+-
+
+[Tarmac](https://github.com/Roblox/tarmac)  uploads images from disk to Roblox and generates a module that maps file paths to asset IDs.
+
+-
+
+[rbx-merge](https://github.com/kennethloeffler/rbx-merge)  lets Git show readable diffs of Roblox place and model files and merge changes that don't conflict. For setup, see [Fully managed Rojo](/docs/projects/rojo/fully-managed#setup-once-per-project) .
+
+## [Undo everything](#undo-everything)[](#undo-everything)
+
+Because third-party tools sync changes back to Roblox Studio rather than replacing it, no part of this workflow involves any lock-in. At any time, you can stop using one or all of these tools and go back to editing your game exclusively in Studio. The lack of risk makes experimenting with third-party tools particularly appealing.
+
+©2026 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.
+
+[Terms](https://www.roblox.com/info/terms) ·[Privacy](https://www.roblox.com/info/privacy) ·[Accessibility](https://www.roblox.com/info/accessibility) ·[Support](https://www.roblox.com/info/help)
+
+[](https://x.com/Roblox)[](https://www.facebook.com/Roblox/)[](https://www.linkedin.com/company/roblox)[](https://www.instagram.com/roblox/)[](https://www.youtube.com/@RobloxLearn)
+
+[
+
+English
+
+](https://create.roblox.com/settings/preferences)

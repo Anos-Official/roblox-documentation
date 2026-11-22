@@ -1,0 +1,116 @@
+<!-- Source: https://create.roblox.com/docs/nl-nl/reference/engine/datatypes/Instance -->
+
+Instance | Documentatie - Roblox Creator Hub
+
+For Agents | Documentation index: https://create.roblox.com/docs/llms.txt | Engine API index: https://create.roblox.com/docs/reference/engine/llms.txt
+
+Meer informatie
+
+1. [Gegevenstypen](/docs/nl-nl/reference/engine/datatypes)
+2. /
+3. [Instance](/docs/nl-nl/reference/engine/datatypes/Instance)
+
+Nederlands
+
+Feedback
+
+Engine-gegevenstype
+
+Instance
+
+* Deze inhoud is vertaald met behulp van AI (bèta) en kan fouten bevatten. Klik [hier](/docs/en-us/reference/engine/datatypes/Instance)  om deze pagina in het Engels te bekijken.
+
+---
+
+## Samenvatting
+
+Constructors
+
+|
+
+[new](#new) (className :  [string](/docs/nl-nl/luau/strings) , parent :  [Instance](/docs/nl-nl/reference/engine/datatypes/Instance) ? )
+
+ |
+| --- | --- |
+|
+
+[fromExisting](#fromExisting) (existingInstance :  [Instance](/docs/nl-nl/reference/engine/datatypes/Instance) )
+
+ |
+
+---
+
+API-referentie
+
+Constructors
+
+new
+
+Instance.new (
+
+className :[string](/docs/nl-nl/luau/strings) , parent :[Instance](/docs/nl-nl/reference/engine/datatypes/Instance) ? )
+
+Parameters
+
+|
+
+className :[string](/docs/nl-nl/luau/strings)
+
+ |
+|
+
+parent :[Instance](/docs/nl-nl/reference/engine/datatypes/Instance) ?
+
+ |
+
+Feedback geven
+
+---
+
+fromExisting
+
+Instance.fromExisting (existingInstance :[Instance](/docs/nl-nl/reference/engine/datatypes/Instance) )
+
+Parameters
+
+|
+
+existingInstance :[Instance](/docs/nl-nl/reference/engine/datatypes/Instance)
+
+ |
+
+Feedback geven
+
+---
+
+Ga naar
+
+▼
+
+Instance
+
+[Samenvatting](#summary)
+
+[Constructors](#summary-constructors)
+
+[Constructors](#constructors)
+
+[new()](#new)
+
+[fromExisting()](#fromExisting)
+
+Nederlands
+
+Feedback
+
+©2026 Roblox Corporation. Roblox, het Roblox-logo en Powering Imagination behoren tot onze geregistreerde en niet-geregistreerde handelsmerken in de VS en andere landen.
+
+[Voorwaarden](https://www.roblox.com/info/terms) ·[Privacy](https://www.roblox.com/info/privacy) ·[Toegankelijkheid](https://www.roblox.com/info/accessibility) ·[Ondersteuning](https://www.roblox.com/info/help)
+
+[](https://x.com/Roblox)[](https://www.facebook.com/Roblox/)[](https://www.linkedin.com/company/roblox)[](https://www.instagram.com/roblox/)[](https://www.youtube.com/@RobloxLearn)
+
+[
+
+Nederlands
+
+](https://create.roblox.com/settings/preferences)

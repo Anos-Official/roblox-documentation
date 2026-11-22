@@ -1,0 +1,127 @@
+<!-- Source: https://create.roblox.com/docs/en-us/performance-optimization/design -->
+
+Design for performance | Documentation - Roblox Creator Hub
+
+For Agents | This page is available as markdown: https://create.roblox.com/docs/performance-optimization/design.md | Documentation index: https://create.roblox.com/docs/llms.txt
+
+1. [Learn](/docs/en-us)
+2. /
+3. [Experiences](/docs/en-us/experiences)
+4. /
+5. [Performance optimization](/docs/en-us/performance-optimization)
+
+# Design for performance
+
+English
+
+[Edit](https://github.com/Roblox/creator-docs/blob/main/content/en-us/performance-optimization/design.md)
+
+Designing for performance means following a handful of best practices as you build  your game. Compared to finding and fixing performance issues later in the development process, designing for performance early can save you a lot of time and effort.
+
+## [Low-end devices](#low-end-devices)[](#low-end-devices)
+
+Lower-end devices, particularly mobile devices, have severe memory limitations and are susceptible to crashes due to out of memory (OOM) errors:
+
+-
+
+If you want to support lower-end devices, choose at least one "baseline" device, [test your game on it](/docs/en-us/performance-optimization/test-on-hardware)  throughout the development process, and pay close attention to frame rate and memory usage. As you find problem areas in your game, use those areas to identify the limits of your device.
+
+For example, you might test a game with the Render  (Shift F2 ) and Summary  (Shift F2 ) debug stats enabled. If the frame rate starts to drop in a particularly cluttered area, you could examine the Draw (scene)  numbers and determine that you need to stay below 1,000 draw calls and 1,000,000 triangles for the game to run well on your baseline device.
+
+Or you could examine the Developer Console  (F9 ) and note that memory usage is a bit high unless you enable [streaming](/docs/en-us/workspace/streaming) . Having a clear understanding of device limits can help you stay under them as you continue to build your game.
+
+![A Roblox game with three overlays active.](https://prod.docsiteassets.roblox.com/assets/optimization/perf-hud.png)
+
+-
+
+The device emulator in Roblox Studio is useful for checking aspect ratio and controls, but isn't accurate for memory usage; when you test a game in Studio, it runs the server and the client, so memory usage is significantly higher.
+
+Roblox does not have access to all of a device's memory. Some amount is required for the operating system and other applications.
+
+### [Graphics quality levels](#graphics-quality-levels)[](#graphics-quality-levels)
+
+Roblox automatically scales rendering quality to each device's capabilities. At lower quality levels, the engine reduces features such as draw distance, but even at the lowest quality level, the draw distance is at least 500 studs. Terrain water stays transparent and beams keep their segment count at all quality levels. Roblox continually tunes these values, so avoid designing around exact draw distances.
+
+-
+
+To preview your game at different quality levels in Studio, open [Studio Settings](/docs/en-us/studio/setup#customization) , select Rendering , and change Editor Quality Level . Test your visuals at both the lowest and highest levels.
+
+-
+
+If raising the quality level doesn't reveal more of your scene, the objects might not have streamed in. Check your [streaming](/docs/en-us/workspace/streaming)  [StreamingTargetRadius](/docs/en-us/reference/engine/classes/Workspace#StreamingTargetRadius)  setting.
+
+-
+
+Avoid changing visual effects in scripts based on [UserGameSettings.SavedQualityLevel](/docs/en-us/reference/engine/classes/UserGameSettings#SavedQualityLevel) . Doing so makes it harder for the engine's automatic scaling to work.
+
+More generally, [testing on a variety of devices](/docs/en-us/performance-optimization/test-on-hardware)  can help you check that the game matches your visual and performance expectations at different graphics quality levels. For a much more detailed example of how you might think about optimizing your game for low-end mobile devices, see [Real World Building and Scripting Optimization](https://devforum.roblox.com/t/real-world-building-and-scripting-optimization-for-roblox/3127146) .
+
+## [Streaming and teleportation](#streaming-and-teleportation)[](#streaming-and-teleportation)
+
+-
+
+[Instance streaming](/docs/en-us/workspace/streaming)  lets Roblox dynamically load and unload 3D content and is a great option for most places, especially larger ones. Streaming improves join times, reduces memory footprint, and increases frame rate.
+
+For example, when you enable [Workspace.EnableSLIMAvatars](/docs/en-us/reference/engine/classes/Workspace#EnableSLIMAvatars)  and set your world models' [LevelOfDetail](/docs/en-us/reference/engine/classes/Model#LevelOfDetail)  property to [SLIM](/docs/en-us/reference/engine/enums/ModelLevelOfDetail#SLIM) , you can create worlds with social spaces and crowded events that remain visually populated while scaling across a wide range of device capabilities. For more information, see [SLIM](/docs/en-us/workspace/streaming/slim)  and [Improve performance](/docs/en-us/performance-optimization/improve#instance-streaming) .
+
+-
+
+Consider breaking large places into more manageable ones and using [teleportation](/docs/en-us/projects/teleport)  to move players between them. This approach can reduce initial  join times, but imposes additional join times as players teleport from place to place. Benefits to memory usage vary depending on the size of the place and whether you've enabled streaming.
+
+Even ignoring performance considerations, you might find that having multiple places simplifies the development process, especially if you regularly add new content to your game or are part of a larger team.
+
+## [Materials and duplication](#materials-and-duplication)[](#materials-and-duplication)
+
+-
+
+Built-in materials use far less memory than custom textures, but might not match your artistic vision. Try to use materials whenever possible in order to conserve memory budget for the textures that are central to your game.
+
+-
+
+As you create assets, convert them into [packages](/docs/en-us/projects/assets/packages) . Making packages part of your workflow helps avoid the common issue of duplicate assets with different IDs, which can hurt performance.
+
+-
+
+When you add meshes and textures, use and reuse them rather than importing duplicate copies. By resizing, rotating, and overlapping, you can create rich, varied environments that require very few [draw calls](/docs/en-us/performance-optimization/improve#draw-calls) . For more information, see [Remove duplicate textures](/docs/en-us/tutorials/curriculums/environmental-art/optimize-your-experience#remove-duplicate-textures) .
+
+## [Transparency](#transparency)[](#transparency)
+
+-
+
+Avoid transparency values other than 0 (visible) and 1 (invisible). When you use partial transparency, be especially careful to avoid [high transparency overdraw](/docs/en-us/tutorials/curriculums/environmental-art/optimize-your-experience#delete-layered-transparencies) .
+
+## [Scripting](#scripting)[](#scripting)
+
+-
+
+Whenever possible, write event-driven code rather than per-frame calculations. At 60 FPS, the total budget for each frame is 16.67 milliseconds (ms). Even seemingly minor per-frame calculations can use a significant portion of that budget.
+
+-
+
+Find ways to break long-running code into manageable chunks. If a piece of code takes 100 ms to execute and you run it every frame, your game can only run at 10 FPS. If you decide to only run the code once per second in a game that otherwise runs at 60 FPS, 59 of your frames arrive after 16.67 ms... and then one after 100 ms, which causes a jarring stutter.
+
+Instead, investigate how you can break up the code. Maybe you can perform 5 ms of work per frame, use [task.wait()](/docs/en-us/reference/engine/libraries/task#wait) , and have the completed calculation every 20 frames while still maintaining 60 FPS. [Multithreading](/docs/en-us/scripting/multithreading) , sometimes called Parallel Luau, can also help.
+
+-
+
+Use the [RBXScriptConnection:Disconnect()](/docs/en-us/reference/engine/datatypes/RBXScriptConnection#Disconnect)  method to stop functions from being called unnecessarily the next time an event fires.
+
+-
+
+Don't call the same method every time you need a value. Call the method once, store the value, and then overwrite it later as necessary.
+
+-
+
+Don't store everything in [ReplicatedStorage](/docs/en-us/reference/engine/classes/ReplicatedStorage) . The client loads everything that is in this container. Instead, use [ServerStorage](/docs/en-us/reference/engine/classes/ServerStorage)  for anything that the client does not need access to.
+
+©2026 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.
+
+[Terms](https://www.roblox.com/info/terms) ·[Privacy](https://www.roblox.com/info/privacy) ·[Accessibility](https://www.roblox.com/info/accessibility) ·[Support](https://www.roblox.com/info/help)
+
+[](https://x.com/Roblox)[](https://www.facebook.com/Roblox/)[](https://www.linkedin.com/company/roblox)[](https://www.instagram.com/roblox/)[](https://www.youtube.com/@RobloxLearn)
+
+[
+
+English
+
+](https://create.roblox.com/settings/preferences)
